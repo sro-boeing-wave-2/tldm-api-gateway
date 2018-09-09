@@ -1,0 +1,43 @@
+{
+    "ReRoutes": [
+        {
+        "DownstreamPathTemplate": "/api/values",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7001
+                }
+            ],
+        "UpstreamPathTemplate": "/onboard/values"
+        },
+
+        {
+            "DownstreamPathTemplate": "/api/{catchAll}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                    {
+                        "Host": "172.23.238.180",
+                        "Port": 9999
+                    }
+                ],
+            "UpstreamPathTemplate": "/marketplace/{catchAll}",
+            "UpstreamHttpMethod": [ "POST", "PUT", "GET","DELETE" ]
+         },
+
+         {
+            "DownstreamPathTemplate": "/api/{catchAll}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                    {
+                        "Host": "172.23.238.165",
+                        "Port": 5000
+                    }
+                ],
+            "UpstreamPathTemplate": "/onboard/{catchAll}"
+         }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7000"
+    }
+}

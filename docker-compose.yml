@@ -1,0 +1,19 @@
+version : '3.4'
+
+services:
+  example-api:
+    image: example-api
+    build :
+      context: ./example-api
+      dockerfile: Dockerfile  
+    ports:
+      - "7001:80" 
+
+  gateway-api:
+    image: gateway-api
+    build :
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    
+    ports:
+       - "7000:80"
