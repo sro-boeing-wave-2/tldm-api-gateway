@@ -12,3 +12,17 @@ D:\workspace\Angular\tl-dm\Api-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-g
 D:\workspace\Angular\tl-dm\Api-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorTargetAssemblyInfo.cache
 D:\workspace\Angular\tl-dm\Api-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.dll
 D:\workspace\Angular\tl-dm\Api-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.pdb
+E:\workspace\API-Gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.deps.json
+E:\workspace\API-Gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.runtimeconfig.json
+E:\workspace\API-Gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.runtimeconfig.dev.json
+E:\workspace\API-Gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.dll
+E:\workspace\API-Gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.pdb
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.csprojAssemblyReference.cache
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.csproj.CoreCompileInputs.cache
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorAssemblyInfo.cache
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorAssemblyInfo.cs
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.AssemblyInfoInputs.cache
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.AssemblyInfo.cs
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorTargetAssemblyInfo.cache
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.dll
+E:\workspace\API-Gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.pdb

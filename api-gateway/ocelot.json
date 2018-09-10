@@ -1,43 +1,59 @@
 {
-    "ReRoutes": [
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/values",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-        "DownstreamPathTemplate": "/api/values",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
-                {
-                    "Host": "localhost",
-                    "Port": 7001
-                }
-            ],
-        "UpstreamPathTemplate": "/onboard/values"
-        },
+          "Host": "localhost",
+          "Port": 7001
+        }
+      ],
+      "UpstreamPathTemplate": "/onboard/values"
+    },
 
+    {
+      "DownstreamPathTemplate": "/api/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-            "DownstreamPathTemplate": "/api/{catchAll}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                    {
-                        "Host": "172.23.238.180",
-                        "Port": 9999
-                    }
-                ],
-            "UpstreamPathTemplate": "/marketplace/{catchAll}",
-            "UpstreamHttpMethod": [ "POST", "PUT", "GET","DELETE" ]
-         },
+          "Host": "172.23.238.180",
+          "Port": 9999
+        }
+      ],
+      "UpstreamPathTemplate": "/marketplace/{catchAll}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+    },
 
-         {
-            "DownstreamPathTemplate": "/api/{catchAll}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                    {
-                        "Host": "172.23.238.165",
-                        "Port": 5000
-                    }
-                ],
-            "UpstreamPathTemplate": "/onboard/{catchAll}"
-         }
-    ],
-    "GlobalConfiguration": {
-        "BaseUrl": "https://localhost:7000"
+    {
+      "DownstreamPathTemplate": "/api/onboarding/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "172.23.238.165",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/onboard/{catchAll}"
+    },
+
+    //chat backend
+
+    //172.23.238.230
+    {
+      "DownstreamPathTemplate": "/api/{catchAll}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "172.23.238.230",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/chat/{catchAll}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
     }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7000"
+  }
 }
