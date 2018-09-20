@@ -12,7 +12,7 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
-EXPOSE 7000 5001 80
+EXPOSE 80
 ENV ASPNETCORE_URLS=http://+:80
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "api-gateway.dll"]

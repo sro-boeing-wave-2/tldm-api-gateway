@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Ocelot.Provider.Consul;
+using System;
+using Consul;
+using Chilkat;
 
 namespace api_gateway
 {
@@ -27,35 +30,10 @@ namespace api_gateway
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddOcelot(Configuration).AddConsul();;
             services.AddSignalR();
-
-            //auth
-
-            services.AddAuthentication(
-               options =>
-               {
-                   options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                   options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                   options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-               })
-               .AddJwtBearer("TestKey",
-               options =>
-               {
-                   options.SaveToken = true;
-                   options.RefreshOnIssuerKeyNotFound = false;
-                   options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
-                   {
-                       ValidateIssuer = true,
-                       ValidateAudience = true,
-                       ValidAudience = "http://oec.com",
-                       ValidIssuer = "http://oec.com",
-                       IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MySuperSecureKey"))
-                   };
-               }
-               );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public async void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -66,11 +44,57 @@ namespace api_gateway
                 app.UseHsts();
             }
 
+            app.Use(async (context, next) =>
+            {
+                Console.WriteLine("hello" + "\n");
+                if (context.Request.Path == "/onboard/login" || context.Request.Path == "/onboard/create/workspace" || context.Request.Path == "/onboard/create/workspace/email" || context.Request.Path == "/onboard/workspacedetails" || context.Request.Path == "/onboard/verify" || context.Request.Path == "/onboard/invite/verify")
+                {
+                    await next();
+                }
+
+                Chilkat.Global global = new Chilkat.Global();
+                global.UnlockBundle("Anything for 30-day trail");
+                Chilkat.Jwt jwt = new Chilkat.Jwt();
+
+                using (var client = new ConsulClient())
+                {
+
+                    var getPair = await client.KV.Get("secretkey");
+                    string token = context.Request.Headers["Authorization"];
+
+                    Console.WriteLine(token + "\n");
+                    if (token != null)
+                    {
+                        var x = token.Replace("Bearer ", "");
+                        Console.WriteLine(x + "\n");
+                        Rsa rsaPublicKey = new Rsa();
+                        rsaPublicKey.ImportPublicKey(Encoding.UTF8.GetString(getPair.Response.Value));
+
+                        Console.WriteLine(Encoding.UTF8.GetString(getPair.Response.Value) + "\n");
+
+                        var isTokenVerified = jwt.VerifyJwtPk(x, rsaPublicKey.ExportPublicKeyObj());
+
+                        Console.WriteLine(rsaPublicKey.ExportPublicKeyObj() + "\n");
+
+                        Console.WriteLine(isTokenVerified + "\n");
+                        if (isTokenVerified)
+                        {
+                            Console.WriteLine(isTokenVerified + "\n");
+                            await next();
+                        }
+                         else
+                         {
+                            
+                         }
+                    }
+                }
+            });
+
+
+            app.UseOcelot().Wait();
             app.UseWebSockets();
-           // app.UseOcelot().Wait();
             app.UseHttpsRedirection();
             app.UseMvc();
-            await app.UseOcelot();
         }
     }
 }

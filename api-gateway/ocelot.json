@@ -3,12 +3,7 @@
     {
       "DownstreamPathTemplate": "/api/{catchAll}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "172.23.238.180",
-          "Port": 9999
-        }
-      ],
+      "ServiceName": "marketplace-service-80",
       "UpstreamPathTemplate": "/marketplace/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
@@ -20,45 +15,19 @@
     {
       "DownstreamPathTemplate": "/api/onboarding/{catchAll}",
       "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "172.23.238.165",
-          "Port": 5000
-        }
-      ],
-      "UpstreamPathTemplate": "/onboard/{catchAll}"
-    },
-    {
-      "DownstreamPathTemplate": "/api/chat/{catchAll}",
-      "DownstreamScheme": "ws",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "172.23.238.230",
-          "Port": 5004
-        }
-      ],
-      "UpstreamPathTemplate": "/chat/{catchAll}",
+      "ServiceName": "onboard-service-80",
+      "UpstreamPathTemplate": "/onboard/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
         "GET",
-        "DELETE",
-        "OPTIONS"
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "TestKey",
-        "AllowedScopes": []
-      }
+        "DELETE"
+      ]
     },
     {
       "DownstreamPathTemplate": "/{catchAll}",
       "DownstreamScheme": "ws",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "172.23.238.230",
-          "Port": 5004
-        }
-      ],
+      "ServiceName": "rtm-service-80",
       "UpstreamPathTemplate": "/connect/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
@@ -70,6 +39,10 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:7000"
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
   }
 }
