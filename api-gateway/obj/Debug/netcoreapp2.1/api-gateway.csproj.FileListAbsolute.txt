@@ -53,17 +53,3 @@ D:\workspace\Angular\ocelot-vagrant\data\api-gateway\obj\Debug\netcoreapp2.1\api
 D:\workspace\Angular\ocelot-vagrant\data\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorTargetAssemblyInfo.cache
 D:\workspace\Angular\ocelot-vagrant\data\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.dll
 D:\workspace\Angular\ocelot-vagrant\data\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.pdb
-C:\Users\Admin\Desktop\api-gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.deps.json
-C:\Users\Admin\Desktop\api-gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.runtimeconfig.json
-C:\Users\Admin\Desktop\api-gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.runtimeconfig.dev.json
-C:\Users\Admin\Desktop\api-gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.dll
-C:\Users\Admin\Desktop\api-gateway\api-gateway\bin\Debug\netcoreapp2.1\api-gateway.pdb
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.csprojAssemblyReference.cache
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorAssemblyInfo.cache
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorAssemblyInfo.cs
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.AssemblyInfoInputs.cache
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.AssemblyInfo.cs
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.RazorTargetAssemblyInfo.cache
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.dll
-C:\Users\Admin\Desktop\api-gateway\api-gateway\obj\Debug\netcoreapp2.1\api-gateway.pdb

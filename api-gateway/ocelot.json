@@ -15,7 +15,7 @@
     {
       "DownstreamPathTemplate": "/api/onboarding/{catchAll}",
       "DownstreamScheme": "http",
-      "ServiceName": "onboard-service-80",
+      "ServiceName": "onboarding-service-80",
       "UpstreamPathTemplate": "/onboard/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",

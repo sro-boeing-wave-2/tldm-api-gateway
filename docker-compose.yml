@@ -1,8 +1,7 @@
 version: '3'
 services:
   gateway:
-    build: .
-    context: ./api-gateway
+    build: ./api-gateway
     network_mode: host
     depends_on:
       - consul

@@ -12,6 +12,7 @@ using Ocelot.Provider.Consul;
 using System;
 using Consul;
 using Chilkat;
+using Microsoft.AspNetCore.Http;
 
 namespace api_gateway
 {
@@ -28,7 +29,7 @@ namespace api_gateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddOcelot(Configuration).AddConsul();;
+            services.AddOcelot(Configuration).AddConsul(); ;
             services.AddSignalR();
         }
 
@@ -43,10 +44,13 @@ namespace api_gateway
             {
                 app.UseHsts();
             }
-
             app.Use(async (context, next) =>
             {
                 Console.WriteLine("hello" + "\n");
+                if (context.Request.Query.TryGetValue("access_token", out var token1))
+                {
+                    context.Request.Headers.Add("Authorization", $"Bearer {token1}");
+                }
                 if (context.Request.Path == "/onboard/login" || context.Request.Path == "/onboard/create/workspace" || context.Request.Path == "/onboard/create/workspace/email" || context.Request.Path == "/onboard/workspacedetails" || context.Request.Path == "/onboard/verify" || context.Request.Path == "/onboard/invite/verify")
                 {
                     await next();
@@ -82,15 +86,13 @@ namespace api_gateway
                             Console.WriteLine(isTokenVerified + "\n");
                             await next();
                         }
-                         else
-                         {
-                            
-                         }
+                        else
+                        {
+                            await context.Response.WriteAsync("unauthorized");
+                        }
                     }
                 }
             });
-
-
             app.UseOcelot().Wait();
             app.UseWebSockets();
             app.UseHttpsRedirection();
