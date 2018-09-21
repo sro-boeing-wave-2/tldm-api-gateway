@@ -18,6 +18,6 @@ dotnet: 2.1
 
 script:
   - chmod +x ./deploy.sh
-  - dotnet restore
+  - dotnet restore api-gateway/api-gateway.csproj
 after_success:
   - /bin/bash ./deploy.sh

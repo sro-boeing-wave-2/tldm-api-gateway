@@ -11983,11 +11983,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\workspace\\Angular\\ocelot-vagrant\\data\\api-gateway\\api-gateway.csproj",
+      "projectUniqueName": "D:\\workspace\\Angular\\ocelot-vagrant\\data\\api-gateway\\api-gateway\\api-gateway.csproj",
       "projectName": "api-gateway",
-      "projectPath": "d:\\workspace\\Angular\\ocelot-vagrant\\data\\api-gateway\\api-gateway.csproj",
+      "projectPath": "D:\\workspace\\Angular\\ocelot-vagrant\\data\\api-gateway\\api-gateway\\api-gateway.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "d:\\workspace\\Angular\\ocelot-vagrant\\data\\api-gateway\\obj\\",
+      "outputPath": "D:\\workspace\\Angular\\ocelot-vagrant\\data\\api-gateway\\api-gateway\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
