@@ -1,9 +1,33 @@
 {
   "ReRoutes": [
     {
+      "DownstreamPathTemplate": "/?{catch}",
+      "DownstreamScheme": "http",
+      "ServiceName": "chat-ui-service",
+      "UpstreamPathTemplate": "/chatui?{catch}",
+      "UpstreamHttpMethod": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/{catch}",
+      "DownstreamScheme": "http",
+      "ServiceName": "chat-ui-service",
+      "UpstreamPathTemplate": "/chatui/{catch}",
+      "UpstreamHttpMethod": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE"
+      ]
+    },
+    {
       "DownstreamPathTemplate": "/api/{catchAll}",
       "DownstreamScheme": "http",
-      "ServiceName": "marketplace-service-80",
+      "ServiceName": "marketplace-service",
       "UpstreamPathTemplate": "/marketplace/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
@@ -15,7 +39,7 @@
     {
       "DownstreamPathTemplate": "/api/onboarding/{catchAll}",
       "DownstreamScheme": "http",
-      "ServiceName": "onboarding-service-80",
+      "ServiceName": "onboarding-service",
       "UpstreamPathTemplate": "/onboard/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
@@ -27,8 +51,21 @@
     {
       "DownstreamPathTemplate": "/{catchAll}",
       "DownstreamScheme": "ws",
-      "ServiceName": "rtm-service-80",
+      "ServiceName": "rtm-service",
       "UpstreamPathTemplate": "/connect/{catchAll}",
+      "UpstreamHttpMethod": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE",
+        "OPTIONS"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/{catchAll}",
+      "DownstreamScheme": "http",
+      "ServiceName": "onboard-ui-service",
+      "UpstreamPathTemplate": "/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
