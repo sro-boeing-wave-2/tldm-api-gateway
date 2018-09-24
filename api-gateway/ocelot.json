@@ -37,10 +37,10 @@
       ]
     },
     {
-      "DownstreamPathTemplate": "/{catch}",
+      "DownstreamPathTemplate": "/?{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "marketplace-ui-service",
-      "UpstreamPathTemplate": "/marketplaceui{catch}",
+      "UpstreamPathTemplate": "/marketplaceui?{catch}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
