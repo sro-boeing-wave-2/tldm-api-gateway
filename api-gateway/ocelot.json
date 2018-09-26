@@ -13,6 +13,18 @@
       ]
     },
     {
+      "DownstreamPathTemplate": "/?{catch}",
+      "DownstreamScheme": "http",
+      "ServiceName": "chat-ui-service",
+      "UpstreamPathTemplate": "/chatui/?{catch}",
+      "UpstreamHttpMethod": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE"
+      ]
+    },
+    {
       "DownstreamPathTemplate": "/{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
