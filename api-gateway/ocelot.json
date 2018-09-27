@@ -85,23 +85,13 @@
       ]
     },
     {
-      "DownstreamPathTemplate": "/api/{catchAll}",
-      "DownstreamScheme": "ws",
-      "ServiceName": "rtm-service",
-      "UpstreamPathTemplate": "/chat-api/{catchAll}",
-      "UpstreamHttpMethod": [
-        "POST",
-        "PUT",
-        "GET",
-        "DELETE",
-        "OPTIONS"
-      ]
-    },
-    {
       "DownstreamPathTemplate": "/{catchAll}",
       "DownstreamScheme": "ws",
       "ServiceName": "rtm-service",
-      "UpstreamPathTemplate": "/chat-hub/{catchAll}",
+      "UpstreamPathTemplate": "/chat-api/{catchAll}",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
