@@ -4,7 +4,7 @@
       "DownstreamPathTemplate": "/?{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
-      "UpstreamPathTemplate": "/chatui?{catch}",
+      "UpstreamPathTemplate": "/chat?{catch}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
@@ -16,7 +16,7 @@
       "DownstreamPathTemplate": "/?{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
-      "UpstreamPathTemplate": "/chatui/?{catch}",
+      "UpstreamPathTemplate": "/chat/?{catch}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
@@ -28,7 +28,7 @@
       "DownstreamPathTemplate": "/{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
-      "UpstreamPathTemplate": "/chatui/{catch}",
+      "UpstreamPathTemplate": "/chat/{catch}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
@@ -40,7 +40,7 @@
       "DownstreamPathTemplate": "/{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "marketplace-ui-service",
-      "UpstreamPathTemplate": "/marketplaceui/{catch}",
+      "UpstreamPathTemplate": "/marketplace/{catch}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
@@ -52,7 +52,7 @@
       "DownstreamPathTemplate": "/?{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "marketplace-ui-service",
-      "UpstreamPathTemplate": "/marketplaceui?{catch}",
+      "UpstreamPathTemplate": "/marketplace?{catch}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
@@ -64,7 +64,7 @@
       "DownstreamPathTemplate": "/api/{catchAll}",
       "DownstreamScheme": "http",
       "ServiceName": "marketplace-service",
-      "UpstreamPathTemplate": "/marketplace/{catchAll}",
+      "UpstreamPathTemplate": "/marketplace-api/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
@@ -76,7 +76,7 @@
       "DownstreamPathTemplate": "/api/onboarding/{catchAll}",
       "DownstreamScheme": "http",
       "ServiceName": "onboarding-service",
-      "UpstreamPathTemplate": "/onboard/{catchAll}",
+      "UpstreamPathTemplate": "/onboard-api/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
@@ -85,10 +85,23 @@
       ]
     },
     {
+      "DownstreamPathTemplate": "/api/{catchAll}",
+      "DownstreamScheme": "ws",
+      "ServiceName": "rtm-service",
+      "UpstreamPathTemplate": "/chat-api/{catchAll}",
+      "UpstreamHttpMethod": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE",
+        "OPTIONS"
+      ]
+    },
+    {
       "DownstreamPathTemplate": "/{catchAll}",
       "DownstreamScheme": "ws",
       "ServiceName": "rtm-service",
-      "UpstreamPathTemplate": "/connect/{catchAll}",
+      "UpstreamPathTemplate": "/chat-hub/{catchAll}",
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
