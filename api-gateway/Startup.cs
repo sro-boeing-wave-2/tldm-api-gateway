@@ -52,9 +52,9 @@ namespace api_gateway
             }
 
             app.UseCors("AppPolicy");
-            app.UseOcelot().Wait();
             app.UseWebSockets();
             app.UseMvc();
+            app.UseOcelot().Wait();
         }
     }
 }
