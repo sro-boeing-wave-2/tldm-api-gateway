@@ -47,10 +47,6 @@ namespace api_gateway
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
 
             app.UseCors("AppPolicy");
             app.UseWebSockets();
