@@ -34,10 +34,7 @@ namespace api_gateway
                           .AllowAnyOrigin()
                           .AllowCredentials())
                 );
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddOcelot(Configuration).AddConsul(); ;
-            services.AddSignalR();
-
+            services.AddOcelot(Configuration).AddConsul();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

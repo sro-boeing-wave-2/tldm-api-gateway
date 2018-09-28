@@ -5,24 +5,14 @@
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat?{catch}",
-      "UpstreamHttpMethod": [
-        "POST",
-        "PUT",
-        "GET",
-        "DELETE"
-      ]
+      "UpstreamHttpMethod": ["OPTIONS", "POST", "PUT", "GET", "DELETE"]
     },
     {
       "DownstreamPathTemplate": "/?{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat/?{catch}",
-      "UpstreamHttpMethod": [
-        "POST",
-        "PUT",
-        "GET",
-        "DELETE"
-      ]
+      "UpstreamHttpMethod": ["OPTIONS","POST","PUT","GET","DELETE"]
     },
     {
       "DownstreamPathTemplate": "/{catch}",
@@ -30,6 +20,7 @@
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat/{catch}",
       "UpstreamHttpMethod": [
+        "OPTIONS",
         "POST",
         "PUT",
         "GET",
@@ -42,6 +33,7 @@
       "ServiceName": "marketplace-ui-service",
       "UpstreamPathTemplate": "/marketplace/{catch}",
       "UpstreamHttpMethod": [
+        "OPTIONS",
         "POST",
         "PUT",
         "GET",
@@ -54,6 +46,7 @@
       "ServiceName": "marketplace-ui-service",
       "UpstreamPathTemplate": "/marketplace?{catch}",
       "UpstreamHttpMethod": [
+        "OPTIONS",
         "POST",
         "PUT",
         "GET",
@@ -66,6 +59,7 @@
       "ServiceName": "marketplace-service",
       "UpstreamPathTemplate": "/marketplace-api/{catchAll}",
       "UpstreamHttpMethod": [
+        "OPTIONS",
         "POST",
         "PUT",
         "GET",
@@ -78,6 +72,7 @@
       "ServiceName": "onboarding-service",
       "UpstreamPathTemplate": "/onboard-api/{catchAll}",
       "UpstreamHttpMethod": [
+        "OPTIONS",
         "POST",
         "PUT",
         "GET",
