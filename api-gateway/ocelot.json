@@ -102,7 +102,7 @@
     },
     {
       "DownstreamPathTemplate": "/{catchAll}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "ws",
       "ServiceName": "onboarding-ui-service",
       "UpstreamPathTemplate": "/{catchAll}",
       "UpstreamHttpMethod": [
