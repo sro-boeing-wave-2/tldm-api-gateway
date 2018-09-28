@@ -2,7 +2,7 @@
   "ReRoutes": [
     {
       "DownstreamPathTemplate": "/?{catch}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "ws",
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat?{catch}",
       "UpstreamHttpMethod": [
@@ -14,7 +14,7 @@
     },
     {
       "DownstreamPathTemplate": "/?{catch}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "ws",
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat/?{catch}",
       "UpstreamHttpMethod": [
@@ -26,7 +26,7 @@
     },
     {
       "DownstreamPathTemplate": "/{catch}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "ws",
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat/{catch}",
       "UpstreamHttpMethod": [
