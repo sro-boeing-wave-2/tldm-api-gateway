@@ -34,7 +34,8 @@ namespace api_gateway
             services.AddCors(o => o.AddPolicy("AppPolicy", builder =>
                                builder.AllowAnyHeader()
                                       .AllowAnyMethod()
-                                      .AllowAnyOrigin())
+                                      .AllowAnyOrigin()
+                                      .AllowCredentials())
                             );
         }
 
