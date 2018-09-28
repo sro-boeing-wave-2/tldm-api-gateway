@@ -53,7 +53,6 @@ namespace api_gateway
 
             app.UseCors("AppPolicy");
             app.UseWebSockets();
-            app.UseMvc();
             app.UseOcelot().Wait();
         }
     }
