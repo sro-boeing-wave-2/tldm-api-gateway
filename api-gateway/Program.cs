@@ -22,6 +22,10 @@ namespace api_gateway
                 .ConfigureAppConfiguration((host,config)=>{
                       config.AddJsonFile("ocelot.json");
                   })
+                .ConfigureLogging((HostingAbstractionsWebHostBuilderExtensions, logging) => {
+                    logging.AddConsole();
+                    logging.AddDebug();
+                })
                 .UseStartup<Startup>();
     }
 }
