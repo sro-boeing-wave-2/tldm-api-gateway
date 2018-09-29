@@ -13,6 +13,8 @@ using System;
 using Consul;
 using Chilkat;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.SignalR.Client;
+
 
 namespace api_gateway
 {
