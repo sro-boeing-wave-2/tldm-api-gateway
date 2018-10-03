@@ -36,6 +36,7 @@ namespace api_gateway
                           .AllowAnyOrigin()
                           .AllowCredentials())
                 );
+            services.AddSignalR();
             services.AddOcelot(Configuration).AddConsul();
         }
 
