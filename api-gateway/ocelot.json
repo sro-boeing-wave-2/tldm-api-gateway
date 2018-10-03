@@ -96,6 +96,19 @@
       ]
     },
     {
+      "DownstreamPathTemplate": "/github/{catchAll}",
+      "DownstreamScheme": "http",
+      "ServiceName": "github-bot-service",
+      "UpstreamPathTemplate": "/github/{catchAll}",
+      "UpstreamHttpMethod": [
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE",
+        "OPTIONS"
+      ]
+    },
+    {
       "DownstreamPathTemplate": "/{catchAll}",
       "DownstreamScheme": "http",
       "ServiceName": "onboarding-ui-service",
