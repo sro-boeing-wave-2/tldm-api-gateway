@@ -5,14 +5,26 @@
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat?{catch}",
-      "UpstreamHttpMethod": ["OPTIONS", "POST", "PUT", "GET", "DELETE"]
+      "UpstreamHttpMethod": [
+        "OPTIONS",
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE"
+      ]
     },
     {
       "DownstreamPathTemplate": "/?{catch}",
       "DownstreamScheme": "http",
       "ServiceName": "chat-ui-service",
       "UpstreamPathTemplate": "/chat/?{catch}",
-      "UpstreamHttpMethod": ["OPTIONS","POST","PUT","GET","DELETE"]
+      "UpstreamHttpMethod": [
+        "OPTIONS",
+        "POST",
+        "PUT",
+        "GET",
+        "DELETE"
+      ]
     },
     {
       "DownstreamPathTemplate": "/{catch}",
@@ -84,9 +96,6 @@
       "DownstreamScheme": "ws",
       "ServiceName": "rtm-service",
       "UpstreamPathTemplate": "/chat-api/{catchAll}",
-      "LoadBalancerOptions": {
-        "Type": "RoundRobin"
-      },
       "UpstreamHttpMethod": [
         "POST",
         "PUT",
